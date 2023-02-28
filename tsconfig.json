@@ -1,0 +1,23 @@
+{
+   "compilerOptions": {
+      "target": "ES6",
+      "module": "ES6",
+      "moduleResolution": "Node",
+      "declaration": true,
+      "removeComments": true,
+      "outDir": "./build",
+      "strict": true,
+      "jsx": "react-jsx",
+      "allowJs": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+   },
+   "include": [
+      "src"
+   ],
+   "exclude": [
+      "build",
+      "node_modules",
+      "**/*.spec.ts"
+   ]
+}

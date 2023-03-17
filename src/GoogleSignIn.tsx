@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React from "react";
 
 interface IdConfiguration {
   client_id: string;
@@ -77,17 +77,17 @@ interface GoogleSignInProps {
   buttonConfig?: GsiButtonConfiguration;
 }
 
-export class GoogleSignIn extends Component<GoogleSignInProps, any> {
+export class GoogleSignIn extends React.Component<GoogleSignInProps, any> {
   gsiScriptLoaded: boolean = false;
   user: any = undefined;
 
-  constructor(props: any) {
+  constructor(props: GoogleSignInProps) {
     super(props);
     this.gsiInitialize = this.gsiInitialize.bind(this);
     this.gsiSignIn = this.gsiSignIn.bind(this);
   }
 
-  override componentDidMount() {
+  componentDidMount() {
     if (this.user || this.gsiScriptLoaded) return;
     const script = document.createElement("script");
     script.src = "https://accounts.google.com/gsi/client";
@@ -97,7 +97,7 @@ export class GoogleSignIn extends Component<GoogleSignInProps, any> {
     document.querySelector("body")?.appendChild(script);
   }
 
-  override componentWillUnmount() {
+  componentWillUnmount() {
     globalThis.google.accounts.id.cancel();
     // document.getElementById(gsiScriptId)?.remove();
   }
@@ -145,7 +145,7 @@ export class GoogleSignIn extends Component<GoogleSignInProps, any> {
     // document.getElementById(gsiButtonId)?.remove();
   }
 
-  override render() {
+  render() {
     return <div id={gsiButtonId}></div>;
   }
 }

@@ -41,6 +41,17 @@ export class AuthService {
 				this.logout();
 				return undefined;
 			} else {
+				login.hasRole = (role: string) => {
+					if (login.Roles) {
+						for (let i = 0; i < login.Roles.length; i++) {
+							const element = login.Roles[i];
+							if (element === role) {
+								return true;
+							}
+						}
+					}
+					return false;
+				}
 				return login;
 			}
 		} else {

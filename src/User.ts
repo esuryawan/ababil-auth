@@ -9,4 +9,5 @@ export interface User {
    ExpiredAt?: Date;
 
    Roles?: string[];
+   hasRole(role: string): boolean;
 }

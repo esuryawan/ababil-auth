@@ -1,18 +1,18 @@
 import axios, { Axios, AxiosRequestHeaders, AxiosStatic } from 'axios'
 import { User } from './User';
 
-declare global {
-	var Ababil_AuthAPI_URL: string;
-}
+let AuthAPI_URL = 'http://localhost:8590/api/auth/'
 
-globalThis.Ababil_AuthAPI_URL = 'http://localhost:8590/api/auth/';
+export function setAuthAPI_URL(url: string) {
+	AuthAPI_URL = url;
+}
 
 export class AuthService {
 	// ---------------------------------------------------------------------
 	// Authentication methods
 	// ---------------------------------------------------------------------
 	async signin(data: any) {
-		const response = await axios.post(globalThis.Ababil_AuthAPI_URL + "signin", data);
+		const response = await axios.post(AuthAPI_URL + "signin", data);
 		if (response.data.AccessToken) {
 			this.setLogin(response.data);
 		}
@@ -21,7 +21,7 @@ export class AuthService {
 
 	async signout() {
 		this.setAccessToken(axios);
-		const response = await axios.post(globalThis.Ababil_AuthAPI_URL + "signout");
+		const response = await axios.post(AuthAPI_URL + "signout");
 		return response.data;
 	}
 

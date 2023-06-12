@@ -9,5 +9,16 @@ export interface User {
    ExpiredAt?: Date;
 
    Roles?: string[];
-   hasRole(role: string): boolean;
+}
+
+export function hasRole(user: User, role: string) {
+   if (user.Roles) {
+      for (let i = 0; i < user.Roles.length; i++) {
+         const element = user.Roles[i];
+         if (element === role) {
+            return true;
+         }
+      }
+   }
+   return false;
 }

@@ -1,11 +1,13 @@
 {
 	"private": false,
 	"name": "ababil-auth",
-	"version": "1.1.3",
+	"version": "1.1.20230624",
 	"main": "build/index.js",
 	"description": "Sign In UI Components",
 	"scripts": {
-		"build": "rimraf dist && tsc"
+		"clear": "rimraf build",
+		"tsc": "tsc",
+		"build": "rimraf build && tsc"
 	},
 	"keywords": [],
 	"author": "Erick Suryawan <erick.suryawan@gmail.com>",
@@ -16,8 +18,8 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@types/react": "^18.2.7",
-		"@types/react-dom": "^18.2.4",
-		"typescript": "^5.0.4"
+		"@types/react": "^18.2.14",
+		"@types/react-dom": "^18.2.6",
+		"typescript": "^5.1.3"
 	}
 }

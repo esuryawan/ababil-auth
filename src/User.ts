@@ -1,14 +1,13 @@
 export interface User {
    Id: number;
-   UserName: string;
-   UserKind: number;
-   Email: string;
-
+   Name?: string;
+   Login: string;
+   Kind: number;
+   Email?: string;
    AccessToken?: string;
    Picture?: string;
-   ExpiredAt?: Date;
-
-   Roles?: string[];
+   ExpiredAt: Date;
+   Roles: string[];
 }
 
 export function hasRole(user: User, role: string) {

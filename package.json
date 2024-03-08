@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "ababil-auth",
-	"version": "1.2.20230912",
+	"version": "1.2.20240307",
 	"main": "build/index.js",
 	"description": "Authorization Common Types",
 	"scripts": {
@@ -13,13 +13,13 @@
 	"author": "Erick Suryawan <erick.suryawan@gmail.com>",
 	"license": "ISC",
 	"dependencies": {
-		"axios": "^1.4.0",
+		"axios": "^1.6.7",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@types/react": "^18.2.20",
-		"@types/react-dom": "^18.2.7",
-		"typescript": "^5.1.6"
+		"@types/react": "^18.2.64",
+		"@types/react-dom": "^18.2.21",
+		"typescript": "^5.4.2"
 	}
 }
